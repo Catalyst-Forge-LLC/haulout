@@ -204,6 +204,11 @@
       "date": "2026-09-03",
       "phase": "1-architecture",
       "summary": "Kickoff: ingested SPEC.md, moved root files into docs/fallback/examples/site, renamed userscript to haulout.user.js, applied frozen strings, scaffolded FilePress + LocalSlip + LocalHelm."
+    },
+    {
+      "date": "2026-09-03",
+      "phase": "2-scaffolding",
+      "summary": "haulout.dev live. Teed Greasy Fork: listing pack in docs/greasy-fork.md, userscript 1.1.2 updates from https://haulout.dev/haulout.user.js (GitHub still private)."
     }
   ]
 }

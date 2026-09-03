@@ -248,7 +248,7 @@ DOM path should keep fenced code, tables, links, images, lists, emphasis.
 | Userscript `@name` | HaulOut |
 | FAB id | `haulout-fab` |
 | Overlay id | `haulout-ui` |
-| Version | 1.1.1 |
+| Version | 1.1.2 |
 
 Grant stays `none`. Same-origin `fetch` is the point.
 
@@ -445,7 +445,7 @@ MIT. Unofficial. Not affiliated with the chat sites.
 Haul out the open ChatGPT, Claude, Gemini, Grok, or SuperGrok chat as Markdown or JSON.
 
 **Long**  
-HaulOut adds a Haul out button (Alt+Shift+E) on the major AI chat sites. It hydrates long virtualized threads, prefers each site’s same-origin conversation API when one exists, and downloads a dated Markdown or JSON file with speakers, title/project, and an export timestamp. Nothing is sent to a HaulOut server. `@grant none`.
+HaulOut adds a Haul out button (Alt+Shift+E) on the major AI chat sites. It hydrates long virtualized threads, prefers each site’s same-origin conversation API when one exists, and downloads a dated Markdown or JSON file with speakers, title/project, and an export timestamp. Nothing is sent to a HaulOut server. `@grant` is `GM_info` only.
 
 **Tags**  
 chatgpt, claude, gemini, grok, markdown, json, export, userscript, local-first

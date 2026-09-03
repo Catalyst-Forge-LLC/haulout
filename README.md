@@ -11,7 +11,7 @@ It runs in your browser. Nothing is uploaded.
 ## Install
 
 1. Install [Tampermonkey](https://www.tampermonkey.net/) (or Violentmonkey).
-2. Open [`haulout.user.js`](./haulout.user.js) raw and accept the install, or paste it into a new userscript.
+2. Open [haulout.dev/haulout.user.js](https://haulout.dev/haulout.user.js) and accept the install, or paste [`haulout.user.js`](./haulout.user.js) into a new userscript.
 3. Reload the chat tab.
 4. Click **Haul out** at the bottom right, or press **Alt+Shift+E**.
 

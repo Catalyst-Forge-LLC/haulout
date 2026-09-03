@@ -1,14 +1,14 @@
 // ==UserScript==
 // @name         HaulOut
 // @namespace    dev.haulout
-// @version      1.1.1
+// @version      1.1.2
 // @description  Haul out the open ChatGPT / Claude / Gemini / Grok / SuperGrok conversation as Markdown or JSON.
 // @author       Catalyst Forge LLC
 // @license      MIT
 // @homepageURL  https://haulout.dev
 // @supportURL   https://github.com/Catalyst-Forge-LLC/haulout/issues
-// @downloadURL  https://github.com/Catalyst-Forge-LLC/haulout/raw/main/haulout.user.js
-// @updateURL    https://github.com/Catalyst-Forge-LLC/haulout/raw/main/haulout.user.js
+// @downloadURL  https://haulout.dev/haulout.user.js
+// @updateURL    https://haulout.dev/haulout.user.js
 // @match        https://chatgpt.com/*
 // @match        https://chat.openai.com/*
 // @match        https://claude.ai/*
@@ -140,7 +140,7 @@
   }, true);
 
   try {
-    console.info("[HaulOut] " + ((typeof GM_info !== "undefined" && GM_info.script && GM_info.script.version) || "1.1.1") + " on " + location.host + location.pathname);
+    console.info("[HaulOut] " + ((typeof GM_info !== "undefined" && GM_info.script && GM_info.script.version) || "1.1.2") + " on " + location.host + location.pathname);
   } catch (_) {}
 
   if (document.readyState === "loading") {
@@ -151,7 +151,7 @@
   hookSpa();
 
 async function haulOut() {
-  const VERSION = "1.1.1";
+  const VERSION = "1.1.2";
   const exportedAt = new Date().toISOString();
 
   const sleep = (ms) => new Promise((r) => setTimeout(r, ms));

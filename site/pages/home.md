@@ -6,9 +6,9 @@ order: 0
 
 Pull the open conversation off ChatGPT, Claude, Gemini, Grok, and SuperGrok as Markdown or JSON. Speakers, clocks when the site has them, title and project, export timestamp. Nothing is uploaded.
 
-[Install userscript](#install) · [View a sample haul](/example.md)
+[Install userscript](/haulout.user.js) · [View a sample haul](/example.md)
 
-Tampermonkey / Violentmonkey / Greasemonkey. Local only.
+Tampermonkey / Violentmonkey / Greasemonkey. Local only. Greasy Fork listing next.
 
 ## How
 
@@ -24,7 +24,7 @@ ChatGPT · Claude · Gemini · Grok · SuperGrok (`x.com/i/grok`)
 
 ## Install
 
-- **Userscript (supported path):** install [Tampermonkey](https://www.tampermonkey.net/), then open [`haulout.user.js`](/haulout.user.js) and accept the install. Or use the [raw file on GitHub](https://github.com/Catalyst-Forge-LLC/haulout/raw/main/haulout.user.js).
+- **Userscript (supported path):** install [Tampermonkey](https://www.tampermonkey.net/), then open [`haulout.user.js`](/haulout.user.js) and accept the install.
 - **Bookmarklet:** people who refuse userscripts can drag from the fallback page in the repo. Claude often blocks `javascript:` bookmarks.
 - **Console:** paste [`haulout.js`](https://github.com/Catalyst-Forge-LLC/haulout/blob/main/fallback/haulout.js).
 

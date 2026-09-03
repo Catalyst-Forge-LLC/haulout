@@ -75,16 +75,20 @@ Bad: “Rescue your AI memories with one click.”
 
 ### In Progress
 
-- Site first run / visual check
+- Greasy Fork listing (sync from https://haulout.dev/haulout.user.js; GitHub still private)
 - SPEC §14 acceptance on live chat sites
 
 ### Not Started
 
-- Greasy Fork listing
+- Swap haulout.dev hero CTA to the Greasy Fork Install URL once the script id exists
 - Copy-to-clipboard / remember last format (v1.1)
 - Gemini RPC (v1.2)
 
 ## Recent changes
+
+### Session 2 — 2026-09-03
+
+haulout.dev live. Greasy Fork listing pack. Userscript 1.1.2 updates from haulout.dev (GitHub still private).
 
 ### Session 1 — 2026-09-03
 

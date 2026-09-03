@@ -8,11 +8,11 @@ Seeded from `docs/PHASE_1_BRIEF.md` §11 and SPEC §13. Reorganize by brand pill
 - [x] Sample haul at `examples/kitchen-reno.md`
 - [x] haulout.dev FilePress one-pager
 - [x] MIT LICENSE, SPEC, README
-- [ ] Confirm Phase 1 lock with the user
+- [x] Confirm Phase 1 lock with the user
 - [x] `pnpm dev` site check in the browser
 - [ ] SPEC §14 acceptance checks on live platforms
-- [ ] Greasy Fork listing (when asked)
-- [ ] Cloudflare Pages project `haulout` + first ship (when asked)
+- [ ] Greasy Fork listing — paste pack in `docs/greasy-fork.md`; swap hero CTA when the script id exists
+- [x] Cloudflare Pages project `haulout` + first ship (when asked)
 
 ## v1.1
 

@@ -1,0 +1,12 @@
+node_modules/
+site/node_modules/
+site/build/
+site/.svelte-kit/
+site/.filepress/
+site/static/haulout.user.js
+site/static/example.md
+.DS_Store
+Thumbs.db
+.env
+.env.*
+*.log

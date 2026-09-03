@@ -1,0 +1,12 @@
+---
+description: Git commit and push policy for this repo
+alwaysApply: true
+---
+
+# Git policy
+
+- After substantive work, commit with a good message.
+- Do not push unless the user explicitly asks.
+- Never publish to npm. Do not run `npm publish`, `pnpm publish`,
+  or `yarn npm publish`. The user publishes.
+- No unrequested attribution trailers in commit messages.

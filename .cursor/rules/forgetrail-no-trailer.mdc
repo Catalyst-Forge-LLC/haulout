@@ -1,0 +1,10 @@
+---
+description: Never add unrequested commit attribution trailers
+alwaysApply: true
+---
+
+# Commit messages
+
+Use `git commit -F` or plain `-m`. Do not add attribution trailers
+(Co-authored-by, Made-with, Generated-by, or similar) unless the user
+asked for them.

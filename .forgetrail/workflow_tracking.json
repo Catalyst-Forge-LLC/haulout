@@ -1,0 +1,209 @@
+{
+  "project": {
+    "name": "HaulOut",
+    "created": "2026-09-03",
+    "description": "Pull the open ChatGPT, Claude, Gemini, Grok, or SuperGrok conversation off the site as Markdown or JSON. Local only.",
+    "archetype": "product",
+    "status": "active",
+    "domain": "https://haulout.dev",
+    "repo": "https://github.com/Catalyst-Forge-LLC/haulout.git"
+  },
+  "currentPhase": "2-scaffolding",
+  "phases": {
+    "1-architecture": {
+      "status": "in_progress",
+      "startedAt": "2026-09-03",
+      "completedAt": null,
+      "exitCriteriaMet": [
+        "Tech choices confirmed",
+        "Folder structure confirmed",
+        "Data model shape confirmed",
+        "First feature batch defined",
+        "PHASE_1_BRIEF.md created, complete, and locked (docs/)",
+        "Major decisions recorded in workflow_tracking.json decisions[]"
+      ],
+      "exitCriteriaRemaining": [
+        "Claude's understanding verified by user"
+      ],
+      "notes": [
+        "Ingested from docs/SPEC.md at kickoff. User asked to set up ForgeTrail, LocalSlip, LocalHelm, and FilePress in the same pass. Brief locked from that spec; awaiting explicit Phase 1 confirmation before marking this phase completed."
+      ]
+    },
+    "2-scaffolding": {
+      "status": "in_progress",
+      "startedAt": "2026-09-03",
+      "completedAt": null,
+      "exitCriteriaMet": [
+        "CONTEXT_PROMPT.md created and populated by merging PHASE_1_BRIEF.md",
+        "README.md created (from ForgeTrail template)",
+        "TODO.md created (from ForgeTrail template, seeded from PHASE_1_BRIEF §11)",
+        "IDEAS.md created (from ForgeTrail template)",
+        "Phase 2 doc scope only per WORKFLOW §1a (no premature extra templates)",
+        "App runs with pnpm dev",
+        "Real data visible on screen"
+      ],
+      "exitCriteriaRemaining": [
+        "Hero flow functions end to end"
+      ],
+      "notes": [
+        "Hero flow is the userscript, which already exists. Scaffold is the FilePress site + repo layout + LocalSlip/LocalHelm. PocketBase/auth/CRUD exit criteria pruned — local-only static site + userscript, no backend."
+      ]
+    },
+    "3-stabilization": {
+      "status": "not_started",
+      "startedAt": null,
+      "completedAt": null,
+      "exitCriteriaMet": [],
+      "exitCriteriaRemaining": [
+        "Userscript install path works from GitHub raw and haulout.dev/haulout.user.js",
+        "Core workflow completes without infrastructure errors",
+        "Error messages are human-readable (not just status codes)"
+      ],
+      "notes": []
+    },
+    "4-feature-iteration": {
+      "status": "not_started",
+      "startedAt": null,
+      "completedAt": null,
+      "exitCriteriaMet": [],
+      "exitCriteriaRemaining": [
+        "Core value proposition delivered",
+        "Hero flow works with real data including edge cases",
+        "SPEC §14 acceptance checks"
+      ],
+      "notes": [],
+      "iterations": []
+    },
+    "5-refactoring": {
+      "status": "not_started",
+      "startedAt": null,
+      "completedAt": null,
+      "exitCriteriaMet": [],
+      "exitCriteriaRemaining": [
+        "No file exceeds ~500 lines without justification",
+        "Platform adapters isolated from Markdown/JSON rendering",
+        "Build passes after each refactor"
+      ],
+      "notes": []
+    },
+    "6-strategic-review": {
+      "status": "not_started",
+      "startedAt": null,
+      "completedAt": null,
+      "exitCriteriaMet": [],
+      "exitCriteriaRemaining": [
+        "BRAND_AND_PRODUCT.md created (from ForgeTrail template)",
+        "TODO reorganized by brand value pillars",
+        "Features mapped to brand pillars",
+        "Gap between brand promise and product identified",
+        "IDEAS.md processed into TODO",
+        "Build order decided"
+      ],
+      "notes": []
+    },
+    "7-hardening": {
+      "status": "not_started",
+      "startedAt": null,
+      "completedAt": null,
+      "exitCriteriaMet": [],
+      "exitCriteriaRemaining": [
+        "CODE_QUALITY.md produced and critical findings fixed",
+        "BLACK_HAT_REPORT.md produced and critical/high findings fixed",
+        "All findings triaged into TODO.md with P0/P1/P2 priority",
+        "No silent failures in core workflows",
+        "DEPLOYMENT.md created",
+        "TEST_PLAN.md complete or extended",
+        "Docs alignment audit passed"
+      ],
+      "notes": [
+        "Pruned payment/auth/business-plan rows: no accounts, no payments in v1."
+      ]
+    }
+  },
+  "decisions": [
+    {
+      "id": "D1",
+      "timestamp": "2026-09-03",
+      "phase": "1-architecture",
+      "decision": "Name is HaulOut / haul out / family sentence with Detangler. Domain haulout.dev.",
+      "rationale": "Frozen in SPEC §1. Do not reopen.",
+      "alternatives_considered": [
+        "ChatRescue",
+        "Offthread",
+        "Castoff",
+        "Offing",
+        "Unthread",
+        "Ripcord",
+        "Omni-exporter"
+      ]
+    },
+    {
+      "id": "D2",
+      "timestamp": "2026-09-03",
+      "phase": "1-architecture",
+      "decision": "Primary vehicle is a Tampermonkey userscript. Bookmarklet/console are fallbacks. No HaulOut server.",
+      "rationale": "Must run in the page origin with the user's cookies. Same-origin fetch only.",
+      "alternatives_considered": [
+        "Chrome Web Store extension",
+        "Hosted proxy",
+        "CLI-first"
+      ]
+    },
+    {
+      "id": "D3",
+      "timestamp": "2026-09-03",
+      "phase": "1-architecture",
+      "decision": "Markdown + JSON only in v1. Filename haulout-YYYY-MM-DD-<platform>-<slug>.",
+      "rationale": "Readable, diffable, Obsidian/Detangler-friendly. YAML front matter on Markdown.",
+      "alternatives_considered": ["PDF", "DOCX", "HTML"]
+    },
+    {
+      "id": "D4",
+      "timestamp": "2026-09-03",
+      "phase": "1-architecture",
+      "decision": "Scope is the open conversation, not a bulk archive. No telemetry.",
+      "rationale": "Official takeouts already exist. Local-only is the product promise.",
+      "alternatives_considered": ["Full-account scrape", "Cloud sync"]
+    },
+    {
+      "id": "D5",
+      "timestamp": "2026-09-03",
+      "phase": "1-architecture",
+      "decision": "Site is FilePress static on haulout.dev. LocalSlip lease haulout-site:5198. LocalHelm enroll haulout. pnpm.",
+      "rationale": "House standard stack. One page is enough for v1. No PocketBase — nothing to persist in a backend.",
+      "alternatives_considered": ["SvelteKit app", "Plain install.html only", "PocketBase"]
+    },
+    {
+      "id": "D6",
+      "timestamp": "2026-09-03",
+      "phase": "1-architecture",
+      "decision": "Repo layout: haulout.user.js at root; fallback/; docs/; examples/; site/; scripts/.",
+      "rationale": "GitHub raw and Greasy Fork need a stable root userscript path. Root was a flat dump.",
+      "alternatives_considered": ["userscript/ folder (breaks raw URL)", "site-as-repo-root"]
+    },
+    {
+      "id": "D7",
+      "timestamp": "2026-09-03",
+      "phase": "1-architecture",
+      "decision": "Detangler is the next tool, not a HaulOut mode.",
+      "rationale": "SPEC §15. Family sentence only.",
+      "alternatives_considered": ["Summarize-on-export", "In-script rewrite"]
+    },
+    {
+      "id": "D8",
+      "timestamp": "2026-09-03",
+      "phase": "1-architecture",
+      "decision": "Prune Phase 2 CRUD/PocketBase and Phase 7 auth/payment exit criteria.",
+      "rationale": "Local-only userscript + static site. Archetype is product but persistence is A-local.",
+      "alternatives_considered": ["Keep full Default-A stack"]
+    }
+  ],
+  "gotchas": [],
+  "sessions": [
+    {
+      "date": "2026-09-03",
+      "phase": "1-architecture",
+      "summary": "Kickoff: ingested SPEC.md, moved root files into docs/fallback/examples/site, renamed userscript to haulout.user.js, applied frozen strings, scaffolded FilePress + LocalSlip + LocalHelm."
+    }
+  ]
+}

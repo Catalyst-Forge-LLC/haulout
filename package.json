@@ -1,0 +1,40 @@
+{
+	"name": "haulout",
+	"version": "1.1.1",
+	"private": true,
+	"type": "module",
+	"description": "Pull the open AI chat off the site as Markdown or JSON. Speakers, clocks, title, export timestamp. Local only.",
+	"license": "MIT",
+	"author": "Catalyst Forge LLC",
+	"keywords": [
+		"userscript",
+		"chatgpt",
+		"claude",
+		"gemini",
+		"grok",
+		"markdown",
+		"json",
+		"export",
+		"local-first"
+	],
+	"homepage": "https://haulout.dev",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/Catalyst-Forge-LLC/haulout.git"
+	},
+	"bugs": {
+		"url": "https://github.com/Catalyst-Forge-LLC/haulout/issues"
+	},
+	"scripts": {
+		"dev": "node scripts/site-dev.mjs",
+		"site:dev": "node scripts/site-dev.mjs",
+		"site:build": "pnpm --dir site run build",
+		"site:check": "pnpm --dir site run check",
+		"site:deploy": "pnpm --dir site run ship",
+		"ship": "pnpm --dir site run ship"
+	},
+	"engines": {
+		"node": ">=20"
+	},
+	"packageManager": "pnpm@10.30.1"
+}

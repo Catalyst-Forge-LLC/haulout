@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>AI Chat Exporter — install bookmarklet</title>
+  <style>
+    :root { color-scheme: dark light; }
+    body {
+      margin: 0;
+      font: 16px/1.5 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: #0b0b0c;
+      color: #e4e4e7;
+    }
+    main { max-width: 720px; margin: 0 auto; padding: 48px 24px 80px; }
+    h1 { font-size: 28px; letter-spacing: -0.03em; margin: 0 0 8px; }
+    .lead { color: #a1a1aa; margin: 0 0 28px; }
+    .card {
+      background: #18181b;
+      border: 1px solid #27272a;
+      border-radius: 16px;
+      padding: 20px 22px;
+      margin: 0 0 20px;
+    }
+    .drag {
+      display: inline-block;
+      background: #fafafa;
+      color: #111;
+      font-weight: 650;
+      text-decoration: none;
+      padding: 12px 18px;
+      border-radius: 999px;
+    }
+    .drag:hover { background: #fff; }
+    ol { padding-left: 20px; }
+    code { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 13px; }
+    pre {
+      background: #111;
+      border: 1px solid #27272a;
+      border-radius: 10px;
+      padding: 12px;
+      overflow: auto;
+      font-size: 12px;
+      max-height: 240px;
+    }
+    textarea {
+      width: 100%;
+      min-height: 120px;
+      background: #111;
+      color: #e4e4e7;
+      border: 1px solid #27272a;
+      border-radius: 10px;
+      padding: 10px;
+      font: 12px/1.4 ui-monospace, SFMono-Regular, Menlo, monospace;
+    }
+    .muted { color: #71717a; font-size: 13px; }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>AI Chat Exporter</h1>
+    <p class="lead">One bookmarklet for ChatGPT, Claude, Gemini, grok.com, and Grok on X. Exports the current conversation as Markdown or JSON, with speakers, timestamps when the site exposes them, title/project, and an export clock so you can diff two dumps of the same thread.</p>
+
+    <div class="card">
+      <p style="margin-top:0"><strong>Install:</strong> drag this button onto your bookmarks bar.</p>
+      <p><a class="drag" id="bm" href="#">Export Chat</a></p>
+      <p class="muted">If drag-and-drop is blocked, create a bookmark manually and paste the URL from the box below.</p>
+      <textarea id="raw" readonly></textarea>
+    </div>
+
+    <div class="card">
+      <strong>Use</strong>
+      <ol>
+        <li>Open a conversation on chatgpt.com, claude.ai, gemini.google.com, grok.com, or x.com/i/grok.</li>
+        <li>Click <em>Export Chat</em>.</li>
+        <li>Wait while it scrolls the thread (long chats load turns on demand).</li>
+        <li>Choose Markdown or JSON. The file lands in Downloads.</li>
+      </ol>
+      <p class="muted" style="margin-bottom:0">Nothing is uploaded. The script runs in the page and talks only to that site’s own APIs, using your existing login cookie.</p>
+    </div>
+
+    <div class="card">
+      <strong>If the bookmarklet is blocked</strong>
+      <p>Claude and a few other sites use a Content Security Policy that can refuse <code>javascript:</code> bookmarks. Open DevTools → Console, paste the contents of <code>chat-export.js</code>, press Enter.</p>
+    </div>
+  </main>
+  <script>
+    fetch("./chat-export.bookmarklet.txt")
+      .then((r) => r.text())
+      .then((href) => {
+        document.getElementById("bm").href = href.trim();
+        document.getElementById("raw").value = href.trim();
+      })
+      .catch(() => {
+        document.getElementById("raw").value = "Open this folder locally so the bookmarklet file can be read, or copy chat-export.bookmarklet.txt.";
+      });
+  </script>
+</body>
+</html>

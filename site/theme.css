@@ -1,0 +1,48 @@
+/*
+ * HaulOut — dark page, near-black and zinc, one warm metal accent.
+ * SPEC §10.5. Wordmark is the word. No hull mark yet.
+ */
+:root {
+	--accent: #c4a574;
+	--accent-strong: #e0c49a;
+	--accent-wash: color-mix(in srgb, var(--accent) 12%, transparent);
+	--bg: #0b0b0c;
+	--surface: #18181b;
+	--ink: #e4e4e7;
+	--ink-soft: #a1a1aa;
+	--ink-faint: #71717a;
+	--rule: #27272a;
+	--rule-strong: #3f3f46;
+	--measure: 42rem;
+	--measure-wide: 48rem;
+}
+
+@media (prefers-color-scheme: light) {
+	:root {
+		--accent: #8a6a3b;
+		--accent-strong: #6b522c;
+		--accent-wash: color-mix(in srgb, var(--accent) 10%, transparent);
+		--bg: #0b0b0c;
+		--surface: #18181b;
+		--ink: #e4e4e7;
+		--ink-soft: #a1a1aa;
+		--ink-faint: #71717a;
+		--rule: #27272a;
+		--rule-strong: #3f3f46;
+	}
+}
+
+.home-page .page-header h1 {
+	letter-spacing: -0.03em;
+}
+
+.home-page .hero-lede {
+	font-size: 1.1rem;
+	max-width: 40rem;
+	color: var(--ink-soft);
+}
+
+code,
+pre {
+	font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+}

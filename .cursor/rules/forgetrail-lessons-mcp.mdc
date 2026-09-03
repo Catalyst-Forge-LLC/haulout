@@ -1,0 +1,16 @@
+---
+description: Implementation detail — ForgeTrail MCP searchLessons + getAntiPatterns (also see forgetrail-lessons-gate.mdc)
+globs: haulout.user.js,fallback/**,site/**,scripts/**
+alwaysApply: false
+---
+
+# ForgeTrail lessons + anti-patterns (MCP)
+
+**Workflow:** **`forgetrail-lessons-gate.mdc`** defines **when** to run tools. This file adds density when editing product code.
+
+For **UI/UX**, **export pipelines**, **userscript adapters**, **site copy**, or **install mechanics**:
+
+1. **`searchLessons`** — short keyword query, optional `limit` 8–12.
+2. **`getAntiPatterns`** — skim for vague specs, schema drift, untested refactors, jargon in empty states.
+
+**When to skip:** trivial one-line edits, pure renames with no UX impact, or when the user asks not to broaden scope.

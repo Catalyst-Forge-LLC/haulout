@@ -13,7 +13,7 @@
  *   3. Choose Markdown or JSON. The file downloads locally. Nothing is uploaded.
  */
 (async function AIChatExport() {
-  const VERSION = "1.0.0";
+  const VERSION = "1.1.3";
   const exportedAt = new Date().toISOString();
 
   const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
@@ -520,23 +520,62 @@
   }
 
   function domGemini() {
-    const nodes = [...document.querySelectorAll("user-query, user-query-content, model-response, message-content")];
+    const raw = [...document.querySelectorAll("user-query, user-query-content, model-response, message-content")];
+    const nodes = raw.filter((el) => !raw.some((other) => other !== el && other.contains(el)));
     const turns = [];
     nodes.forEach((el) => {
       const tag = el.tagName.toLowerCase();
       const isUser = tag === "user-query" || tag === "user-query-content";
-      const t = turn(isUser ? "user" : "assistant", isUser ? "You" : "Gemini", el);
+      const content = isUser
+        ? (el.querySelector(".query-text, .query-content, user-query-content") || el)
+        : (el.querySelector("message-content, .markdown, .model-response-text") || el);
+      const t = turn(isUser ? "user" : "assistant", isUser ? "You" : "Gemini", content);
       if (t) {
-        t.text = t.text.replace(/^(You said|Has dicho|Tú has dicho|Gemini said)\s*/i, "");
-        turns.push(t);
+        t.text = cleanGeminiText(t.text);
+        if (t.text) turns.push(t);
       }
     });
     return {
       conversationId: (path.match(/\/app\/([a-zA-Z0-9_-]+)/) || [])[1] || null,
       title: guessTitle("gemini"),
       project: null,
-      turns
+      turns: dedupeAdjacentTurns(turns)
     };
+  }
+
+  function cleanGeminiText(text) {
+    let t = String(text || "").replace(/^\s*(#{1,6}\s*)?(You said|Has dicho|Tú has dicho|Gemini said)\s*/gim, "");
+    t = t.replace(/\n{3,}/g, "\n\n").trim();
+    const blocks = t.split(/\n\n+/);
+    const kept = [];
+    for (let i = 0; i < blocks.length; i++) {
+      const block = blocks[i].trim();
+      if (!block) continue;
+      const stem = block.replace(/^#{1,6}\s*/, "").replace(/[.…]+$/u, "").replace(/\s+/g, " ").trim();
+      const later = blocks.slice(i + 1).join("\n\n").replace(/\s+/g, " ");
+      if (stem.length >= 12 && later.includes(stem)) continue;
+      kept.push(block);
+    }
+    return kept.join("\n\n").trim();
+  }
+
+  function dedupeAdjacentTurns(turns) {
+    const out = [];
+    for (const t of turns) {
+      const key = String(t.text || "").replace(/\s+/g, " ").trim();
+      const prev = out[out.length - 1];
+      if (prev && prev.role === t.role) {
+        const prevKey = String(prev.text || "").replace(/\s+/g, " ").trim();
+        if (prevKey === key) continue;
+        if (key.startsWith(prevKey) && key.length > prevKey.length) {
+          out[out.length - 1] = t;
+          continue;
+        }
+        if (prevKey.startsWith(key) && prevKey.length > key.length) continue;
+      }
+      out.push(t);
+    }
+    return out;
   }
 
   function domGrok() {

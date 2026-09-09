@@ -198,7 +198,14 @@
       "alternatives_considered": ["Keep full Default-A stack"]
     }
   ],
-  "gotchas": [],
+  "gotchas": [
+    {
+      "date": "2026-09-09",
+      "phase": "4-feature-iteration",
+      "issue": "Gemini DOM haul duplicated every turn: selectors matched both user-query and nested user-query-content (and model-response / message-content). Chrome headings 'You said' / truncated previews also survived into Markdown.",
+      "fix": "Keep outermost nodes only, read the inner content node, strip said-headings, drop truncated preview blocks, dedupe adjacent same-role turns. v1.1.3."
+    }
+  ],
   "sessions": [
     {
       "date": "2026-09-03",
@@ -209,6 +216,11 @@
       "date": "2026-09-03",
       "phase": "2-scaffolding",
       "summary": "haulout.dev live. Teed Greasy Fork: listing pack in docs/greasy-fork.md, userscript 1.1.2 updates from https://haulout.dev/haulout.user.js (GitHub still private)."
+    },
+    {
+      "date": "2026-09-09",
+      "phase": "4-feature-iteration",
+      "summary": "Gemini DOM duplicates: outermost-only extract + chrome/preview strip. Userscript 1.1.3."
     }
   ]
 }

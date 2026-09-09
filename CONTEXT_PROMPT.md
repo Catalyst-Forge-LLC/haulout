@@ -86,6 +86,10 @@ Bad: “Rescue your AI memories with one click.”
 
 ## Recent changes
 
+### Session 3 — 2026-09-09
+
+Gemini DOM haul was doubling every turn (outer + nested selectors) and keeping Chrome “You said” / truncated preview lines. Fixed in userscript 1.1.3: outermost-only extract, strip said-headings, drop preview stems, dedupe adjacent same-role turns.
+
 ### Session 2 — 2026-09-03
 
 haulout.dev live. Greasy Fork listing pack. Userscript 1.1.2 updates from haulout.dev (GitHub still private).

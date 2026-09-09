@@ -16,6 +16,7 @@ Seeded from `docs/PHASE_1_BRIEF.md` §11 and SPEC §13. Reorganize by brand pill
 
 ## v1.1
 
+- [x] Gemini DOM: drop nested duplicate turns + Chrome “You said” / truncated previews (1.1.3)
 - [ ] Copy to clipboard as well as download
 - [ ] Remember last format
 - [ ] `sourceCompleteness` when API and DOM disagree

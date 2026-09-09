@@ -248,7 +248,7 @@ DOM path should keep fenced code, tables, links, images, lists, emphasis.
 | Userscript `@name` | HaulOut |
 | FAB id | `haulout-fab` |
 | Overlay id | `haulout-ui` |
-| Version | 1.1.2 |
+| Version | 1.1.3 |
 
 Grant stays `none`. Same-origin `fetch` is the point.
 

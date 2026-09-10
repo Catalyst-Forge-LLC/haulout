@@ -10,7 +10,7 @@ export default defineFilepressConfig({
 	lede: "Pull the open conversation off the chat site as Markdown or JSON. Nothing is uploaded.",
 	url: "https://haulout.dev",
 	author: "Catalyst Forge LLC",
-	logo: null,
+	logo: "/logo.png",
 	homePage: "home",
 	nav: [
 		{ label: "Home", href: "/" },

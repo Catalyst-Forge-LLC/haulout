@@ -850,7 +850,7 @@ async function haulOut() {
     if (convo.updatedAt) lines.push("- **Updated:** " + convo.updatedAt);
     lines.push("- **Exported:** " + convo.exportedAt);
     lines.push("- **Turns:** " + convo.turns.length);
-    lines.push("- **Source:** " + convo.source + (convo.source === "api" ? " (full conversation)" : " (rendered turns after scroll)"));
+    lines.push("- **Source:** " + convo.source + (convo.source === "api" ? " (conversation API)" : " (rendered turns after scroll)"));
     lines.push("");
     convo.turns.forEach((t, i) => {
       lines.push("---");

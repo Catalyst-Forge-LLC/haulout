@@ -10,7 +10,7 @@ model: gpt-5
 created_at: 2026-08-30T14:10:00.000Z
 updated_at: 2026-09-02T12:01:00.000Z
 turns: 4
-exporter: haulout 1.1.1
+exporter: haulout 1.1.3
 ---
 
 # Kitchen reno punch list
@@ -22,7 +22,7 @@ exporter: haulout 1.1.1
 - **Updated:** 2026-09-02T12:01:00.000Z
 - **Exported:** 2026-09-02T17:43:00.000Z
 - **Turns:** 4
-- **Source:** api (full conversation)
+- **Source:** api (conversation API)
 
 ---
 

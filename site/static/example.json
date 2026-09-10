@@ -1,0 +1,44 @@
+{
+  "conversationId": "example-kitchen-reno",
+  "title": "Kitchen reno punch list",
+  "project": "House",
+  "model": "gpt-5",
+  "createdAt": "2026-08-30T14:10:00.000Z",
+  "updatedAt": "2026-09-02T12:01:00.000Z",
+  "exporter": "haulout",
+  "exporterVersion": "1.1.3",
+  "exportedAt": "2026-09-02T17:43:00.000Z",
+  "platform": "chatgpt",
+  "source": "api",
+  "url": "https://chatgpt.com/c/example-kitchen-reno",
+  "turns": [
+    {
+      "id": "example-turn-1",
+      "role": "user",
+      "speaker": "You",
+      "timestamp": "2026-08-30T14:11:02.000Z",
+      "text": "Can we keep the existing range hood?"
+    },
+    {
+      "id": "example-turn-2",
+      "role": "assistant",
+      "speaker": "ChatGPT",
+      "timestamp": "2026-08-30T14:11:18.000Z",
+      "text": "If the hood still vents outside and the CFM matches the new cooktop, yes. Measure the duct, then check the spec sheet for the replacement range. A recirculating hood is the one that usually has to go."
+    },
+    {
+      "id": "example-turn-3",
+      "role": "user",
+      "speaker": "You",
+      "timestamp": "2026-08-30T14:12:04.000Z",
+      "text": "It's a 30-inch external vent. New range is also 30. I just don't want another hole in the cabinet."
+    },
+    {
+      "id": "example-turn-4",
+      "role": "assistant",
+      "speaker": "ChatGPT",
+      "timestamp": "2026-08-30T14:12:31.000Z",
+      "text": "Keep the hood. Add to the punch list: confirm duct diameter, order a new liner if the cabinet cutout is ugly, and leave the exterior cap alone unless it whistles."
+    }
+  ]
+}

@@ -1,44 +1,61 @@
 ---
 title: Haul out the thread.
-description: Pull the open ChatGPT, Claude, Gemini, Grok, or SuperGrok conversation off the site as Markdown or JSON. Local only.
+description: Save the open ChatGPT, Claude, Gemini, Grok, or SuperGrok conversation as Markdown or JSON. Local only.
 order: 0
 ---
 
-Pull the open conversation off ChatGPT, Claude, Gemini, Grok, and SuperGrok as Markdown or JSON. Speakers, clocks when the site has them, title and project, export timestamp. Nothing is uploaded.
+Save the AI conversation you have open as Markdown or JSON, with speaker labels and available metadata. HaulOut runs in your browser and downloads the result. Nothing is uploaded.
 
-[Install userscript](/haulout.user.js) · [View a sample haul](/example.md)
+[Install userscript](/haulout.user.js) · [View a sample haul](/example.md) · [Compatibility](/spec#compatibility)
 
-Tampermonkey / Violentmonkey / Greasemonkey. Local only. Greasy Fork listing next.
+## Install (supported path)
 
-## How
+1. Install [Tampermonkey](https://www.tampermonkey.net/).
+2. Open [haulout.user.js](/haulout.user.js) and accept the install.
+3. Reload the chat tab.
+4. Open the conversation you want.
+5. Click **Haul out** at the bottom right, or press **Alt+Shift+E**.
+6. Pick Markdown or JSON. The file lands in Downloads.
 
-1. Open the conversation.
-2. Click **Haul out** (or Alt+Shift+E).
-3. Pick Markdown or JSON. The file lands in Downloads.
+That is the path this project supports. Claude often blocks `javascript:` bookmarklets. The userscript is the one that works there.
 
-Long chats load turns on demand. HaulOut walks the thread before it reads.
+## What a haul contains
 
-## Platforms
+The [sample Markdown](/example.md) is a sanitized ChatGPT API fixture, not an account archive.
 
-ChatGPT · Claude · Gemini · Grok · SuperGrok (`x.com/i/grok`)
+- **Speakers:** `You` and `ChatGPT` (or the host label)
+- **Title and project** when the page has them
+- **Per-turn clocks** when the site stores them. Missing clocks are omitted, not invented
+- **`exported_at`** so two hauls of the same URL can be compared
+- **`source`:** `api` (conversation endpoint) or `dom` (rendered turns after scroll)
 
-## Install
+JSON is the same fields plus a `turns` array. [Sample JSON](/example.json). Images and uploads are referenced, not zipped.
 
-- **Userscript (supported path):** install [Tampermonkey](https://www.tampermonkey.net/), then open [`haulout.user.js`](/haulout.user.js) and accept the install.
-- **Bookmarklet:** people who refuse userscripts can drag from the fallback page in the repo. Claude often blocks `javascript:` bookmarks.
+## How you know it finished
+
+The button shows `{n} turns · API|DOM · MD|JSON`. `n` is what HaulOut collected. It is not a certificate that the provider stored exactly that many turns. Empty extract fails with an error. A long thread is scrolled first so lazy turns can appear. That walk has a step cap. Public copy does not promise every turn of every conversation.
+
+## Compatibility
+
+Live page checks were **not recently checked** on 2026-09-10. The table lives in [`docs/COMPATIBILITY.md`](https://github.com/Catalyst-Forge-LLC/haulout/blob/main/docs/COMPATIBILITY.md). No platform is marked passed without a recorded check.
+
+ChatGPT, Claude, and grok.com are API-first in code. Gemini and SuperGrok (`x.com/i/grok`) are DOM-first. SuperGrok uses hashed classes and will break first.
+
+## Advanced fallbacks
+
+These are not as reliable as Tampermonkey.
+
+- **Violentmonkey / Greasemonkey:** plausible, not recently checked.
+- **Bookmarklet:** drag from [`fallback/`](https://github.com/Catalyst-Forge-LLC/haulout/tree/main/fallback). Claude often blocks `javascript:`.
 - **Console:** paste [`haulout.js`](https://github.com/Catalyst-Forge-LLC/haulout/blob/main/fallback/haulout.js).
-
-Reload the chat tab. The button sits at the bottom right.
 
 ## Privacy
 
-No HaulOut backend. Same-origin requests only. `@grant` is `GM_info`. You can read the script; it is short on purpose.
+No HaulOut backend. Same-origin requests only. `@grant` is `GM_info`. You can read the script.
 
 ## Limits
 
-Not a full-account archive. Gemini and Grok-on-X are DOM-first. Selectors rot. Binaries are not bundled.
-
-Official bulk exports still exist and are better for “everything I ever said.”
+Not a full-account archive. Official bulk exports still exist and are better for everything you ever said. Selectors rot. Binaries are not bundled.
 
 ## Family
 

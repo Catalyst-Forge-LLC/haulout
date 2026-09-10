@@ -11,3 +11,4 @@ const dest = join(root, "site", "static");
 mkdirSync(dest, { recursive: true });
 copyFileSync(join(root, "haulout.user.js"), join(dest, "haulout.user.js"));
 copyFileSync(join(root, "examples", "kitchen-reno.md"), join(dest, "example.md"));
+copyFileSync(join(root, "examples", "kitchen-reno.json"), join(dest, "example.json"));

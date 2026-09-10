@@ -21,3 +21,7 @@ Tampermonkey userscript. Markdown or JSON. Current conversation only. Local down
 Filename: `haulout-YYYY-MM-DD-<platform>-<slug>.md`
 
 [Full spec on GitHub](https://github.com/Catalyst-Forge-LLC/haulout/blob/main/docs/SPEC.md)
+
+## Compatibility
+
+Live adapter checks were not recently checked. The maintained table is [`docs/COMPATIBILITY.md`](https://github.com/Catalyst-Forge-LLC/haulout/blob/main/docs/COMPATIBILITY.md). No platform is marked passed without a recorded check.

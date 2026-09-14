@@ -8,7 +8,7 @@ Save the AI conversation you have open as Markdown or JSON, with speaker labels 
 
 [Install userscript](/haulout.user.js) · [View a sample haul](/example.md) · [Compatibility](/spec#compatibility)
 
-## Install (supported path)
+## Install
 
 1. Install [Tampermonkey](https://www.tampermonkey.net/).
 2. Open [haulout.user.js](/haulout.user.js) and accept the install.

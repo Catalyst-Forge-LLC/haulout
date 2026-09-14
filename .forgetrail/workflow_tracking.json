@@ -200,6 +200,12 @@
   ],
   "gotchas": [
     {
+      "date": "2026-09-14",
+      "phase": "2-scaffolding",
+      "issue": "FilePress ship failed: nav/footer href /#install, but the home heading was Install (supported path), so rehype-slug never emitted id=install. SvelteKit prerender handleMissingId aborted the build.",
+      "fix": "Heading is ## Install so the hash matches. Keep nav anchors in lockstep with heading text."
+    },
+    {
       "date": "2026-09-09",
       "phase": "4-feature-iteration",
       "issue": "Gemini DOM haul duplicated every turn: selectors matched both user-query and nested user-query-content (and model-response / message-content). Chrome headings 'You said' / truncated previews also survived into Markdown.",

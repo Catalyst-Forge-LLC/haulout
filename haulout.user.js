@@ -28,16 +28,19 @@
   "use strict";
 
   const BTN_ID = "haulout-fab";
-  const HOST_OK = /^(chatgpt\.com|chat\.openai\.com|claude\.ai|gemini\.google\.com|grok\.com|x\.com|twitter\.com)$/;
   let busy = false;
 
+  function hostMatches(host, domain) {
+    return host === domain || host.endsWith("." + domain);
+  }
+
   function currentPlatform() {
-    const host = location.hostname.replace(/^www\./, "");
+    const host = location.hostname.replace(/^www\./, "").toLowerCase();
     const path = location.pathname || "";
-    if (host.includes("chatgpt.com") || host.includes("chat.openai.com")) return "chatgpt";
-    if (host.includes("claude.ai")) return "claude";
-    if (host.includes("gemini.google.com")) return "gemini";
-    if (host.includes("grok.com")) return "grok";
+    if (hostMatches(host, "chatgpt.com") || hostMatches(host, "chat.openai.com")) return "chatgpt";
+    if (hostMatches(host, "claude.ai")) return "claude";
+    if (hostMatches(host, "gemini.google.com")) return "gemini";
+    if (hostMatches(host, "grok.com")) return "grok";
     if ((host === "x.com" || host === "twitter.com") && /\/i\/grok/.test(path + location.search)) return "grok-x";
     return null;
   }
@@ -47,8 +50,6 @@
   }
 
   function ensureButton() {
-    const host = location.hostname.replace(/^www\./, "");
-    if (!HOST_OK.test(host)) return;
     const want = shouldShow();
     let hostEl = document.getElementById(BTN_ID);
     if (!want) {
@@ -155,17 +156,9 @@ async function haulOut() {
   const exportedAt = new Date().toISOString();
 
   const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
-  const host = location.hostname.replace(/^www\./, "");
   const path = location.pathname || "";
   const href = location.href;
-
-  const platform =
-    host.includes("chatgpt.com") || host.includes("chat.openai.com") ? "chatgpt" :
-    host.includes("claude.ai") ? "claude" :
-    host.includes("gemini.google.com") ? "gemini" :
-    host.includes("grok.com") ? "grok" :
-    (host === "x.com" || host === "twitter.com") && /\/i\/grok/.test(path + location.search) ? "grok-x" :
-    null;
+  const platform = currentPlatform();
 
   if (!platform) {
     alert("Open a conversation on ChatGPT, Claude, Gemini, grok.com, or x.com/i/grok first.");
@@ -812,7 +805,7 @@ async function haulOut() {
 
   function tableToMd(table) {
     const rows = [...table.querySelectorAll("tr")].map((tr) =>
-      [...tr.children].map((td) => cleanText(td.textContent).replace(/\|/g, "\\|"))
+      [...tr.children].map((td) => cleanText(td.textContent).replace(/\\/g, "\\\\").replace(/\|/g, "\\|"))
     );
     if (!rows.length) return "";
     const head = rows[0];
@@ -922,8 +915,9 @@ async function haulOut() {
   }
 
   function yamlSafe(s) {
-    const t = String(s).replace(/"/g, '\\"');
-    return /[:#\n]/.test(t) ? '"' + t + '"' : t;
+    const raw = String(s);
+    if (!/[:#"\\\n]/.test(raw) && raw === raw.trim()) return raw;
+    return '"' + raw.replace(/\\/g, "\\\\").replace(/"/g, '\\"').replace(/\n/g, "\\n") + '"';
   }
 
   function docOrder(a, b) {

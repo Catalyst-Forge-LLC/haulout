@@ -17,15 +17,19 @@
   const exportedAt = new Date().toISOString();
 
   const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
-  const host = location.hostname.replace(/^www\./, "");
+  const host = location.hostname.replace(/^www\./, "").toLowerCase();
   const path = location.pathname || "";
   const href = location.href;
 
+  function hostMatches(name, domain) {
+    return name === domain || name.endsWith("." + domain);
+  }
+
   const platform =
-    host.includes("chatgpt.com") || host.includes("chat.openai.com") ? "chatgpt" :
-    host.includes("claude.ai") ? "claude" :
-    host.includes("gemini.google.com") ? "gemini" :
-    host.includes("grok.com") ? "grok" :
+    hostMatches(host, "chatgpt.com") || hostMatches(host, "chat.openai.com") ? "chatgpt" :
+    hostMatches(host, "claude.ai") ? "claude" :
+    hostMatches(host, "gemini.google.com") ? "gemini" :
+    hostMatches(host, "grok.com") ? "grok" :
     (host === "x.com" || host === "twitter.com") && /\/i\/grok/.test(path + location.search) ? "grok-x" :
     null;
 
@@ -674,7 +678,7 @@
 
   function tableToMd(table) {
     const rows = [...table.querySelectorAll("tr")].map((tr) =>
-      [...tr.children].map((td) => cleanText(td.textContent).replace(/\|/g, "\\|"))
+      [...tr.children].map((td) => cleanText(td.textContent).replace(/\\/g, "\\\\").replace(/\|/g, "\\|"))
     );
     if (!rows.length) return "";
     const head = rows[0];
@@ -784,8 +788,9 @@
   }
 
   function yamlSafe(s) {
-    const t = String(s).replace(/"/g, '\\"');
-    return /[:#\n]/.test(t) ? '"' + t + '"' : t;
+    const raw = String(s);
+    if (!/[:#"\\\n]/.test(raw) && raw === raw.trim()) return raw;
+    return '"' + raw.replace(/\\/g, "\\\\").replace(/"/g, '\\"').replace(/\n/g, "\\n") + '"';
   }
 
   function docOrder(a, b) {

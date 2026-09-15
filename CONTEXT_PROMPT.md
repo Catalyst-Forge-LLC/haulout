@@ -29,7 +29,7 @@ fallback/                bookmarklet + console
 docs/                    SPEC, PHASE_1_BRIEF, greasy-fork notes
 examples/                sample haul
 site/                    FilePress (pages/, theme.css)
-scripts/                 site-dev, ensure-lease, sync-static
+scripts/                 site-dev, sync-static
 ```
 
 ## Data model

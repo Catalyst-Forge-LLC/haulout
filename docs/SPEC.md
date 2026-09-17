@@ -123,7 +123,7 @@ Out of scope for v1: Perplexity, Copilot, DeepSeek, Poe, AI Studio standalone, s
 - Floating control, bottom-right, above typical composers (`bottom: 88px`)
 - Host element id `haulout-fab` in a **shadow root** so site CSS cannot restyle it
 - Re-attach on `pushState` / `replaceState` / `popstate` and a slow poll (SPA)
-- On X, only while the path is `/i/grok*`
+- Match all of `x.com` / `twitter.com` so Tampermonkey injects before X’s client router moves to Grok. Show the control only on Grok routes (`/i/grok`, including `?conversation=`)
 
 Button label: **Haul out**  
 Hint line: `Alt+Shift+E`
@@ -248,7 +248,7 @@ DOM path should keep fenced code, tables, links, images, lists, emphasis.
 | Userscript `@name` | HaulOut |
 | FAB id | `haulout-fab` |
 | Overlay id | `haulout-ui` |
-| Version | 1.1.3 |
+| Version | 1.1.4 |
 
 Grant stays `none`. Same-origin `fetch` is the point.
 
@@ -489,7 +489,7 @@ A haul is good enough to ship when:
 - [ ] Claude project thread, project name in front matter
 - [ ] grok.com thread, API or honest DOM fallback
 - [ ] Gemini long thread: scroll actually increases captured turns vs no-scroll
-- [ ] x.com/i/grok does not inject on ordinary tweets
+- [ ] x.com/i/grok does not show the control on ordinary tweets (script may load on x.com for SPA)
 - [ ] Two hauls of the same URL have different `exported_at` and comparable `turns`
 - [ ] No request leaves the chat site origin besides the file download
 

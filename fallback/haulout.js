@@ -13,7 +13,7 @@
  *   3. Choose Markdown or JSON. The file downloads locally. Nothing is uploaded.
  */
 (async function AIChatExport() {
-  const VERSION = "1.1.3";
+  const VERSION = "1.1.4";
   const exportedAt = new Date().toISOString();
 
   const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
@@ -30,7 +30,8 @@
     hostMatches(host, "claude.ai") ? "claude" :
     hostMatches(host, "gemini.google.com") ? "gemini" :
     hostMatches(host, "grok.com") ? "grok" :
-    (host === "x.com" || host === "twitter.com") && /\/i\/grok/.test(path + location.search) ? "grok-x" :
+    (hostMatches(host, "x.com") || hostMatches(host, "twitter.com")) &&
+    (/^\/i\/grok(\/|$)/i.test(path) || (/(?:\?|&)conversation=/.test(location.search) && /grok/i.test(path + location.search))) ? "grok-x" :
     null;
 
   if (!platform) {

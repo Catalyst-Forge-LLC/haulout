@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         HaulOut
 // @namespace    dev.haulout
-// @version      1.1.3
+// @version      1.1.4
 // @description  Haul out the open ChatGPT / Claude / Gemini / Grok / SuperGrok conversation as Markdown or JSON.
 // @author       Catalyst Forge LLC
 // @license      MIT
@@ -15,8 +15,10 @@
 // @match        https://gemini.google.com/*
 // @match        https://grok.com/*
 // @match        https://*.grok.com/*
-// @match        https://x.com/i/grok*
-// @match        https://twitter.com/i/grok*
+// @match        https://x.com/*
+// @match        https://*.x.com/*
+// @match        https://twitter.com/*
+// @match        https://*.twitter.com/*
 // @run-at       document-idle
 // @grant        GM_info
 // @inject-into  content
@@ -34,6 +36,13 @@
     return host === domain || host.endsWith("." + domain);
   }
 
+  function isGrokOnX(host, path, search) {
+    if (!hostMatches(host, "x.com") && !hostMatches(host, "twitter.com")) return false;
+    if (/^\/i\/grok(\/|$)/i.test(path || "")) return true;
+    const hay = String(path || "") + String(search || "");
+    return /(?:\?|&)conversation=/.test(hay) && /grok/i.test(hay);
+  }
+
   function currentPlatform() {
     const host = location.hostname.replace(/^www\./, "").toLowerCase();
     const path = location.pathname || "";
@@ -41,7 +50,7 @@
     if (hostMatches(host, "claude.ai")) return "claude";
     if (hostMatches(host, "gemini.google.com")) return "gemini";
     if (hostMatches(host, "grok.com")) return "grok";
-    if ((host === "x.com" || host === "twitter.com") && /\/i\/grok/.test(path + location.search)) return "grok-x";
+    if (isGrokOnX(host, path, location.search)) return "grok-x";
     return null;
   }
 
@@ -141,7 +150,7 @@
   }, true);
 
   try {
-    console.info("[HaulOut] " + ((typeof GM_info !== "undefined" && GM_info.script && GM_info.script.version) || "1.1.3") + " on " + location.host + location.pathname);
+    console.info("[HaulOut] " + ((typeof GM_info !== "undefined" && GM_info.script && GM_info.script.version) || "1.1.4") + " on " + location.host + location.pathname);
   } catch (_) {}
 
   if (document.readyState === "loading") {
@@ -152,7 +161,7 @@
   hookSpa();
 
 async function haulOut() {
-  const VERSION = "1.1.3";
+  const VERSION = "1.1.4";
   const exportedAt = new Date().toISOString();
 
   const sleep = (ms) => new Promise((r) => setTimeout(r, ms));

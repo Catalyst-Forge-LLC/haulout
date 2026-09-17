@@ -12,7 +12,7 @@ This pass did not re-run live exports against provider pages. Adapter code and a
 | Claude | claude.ai | API first, DOM fallback | not recently checked | unknown | none recorded | implemented, not recently exercised | `javascript:` bookmarklets are often blocked. Userscript is the supported path |
 | Gemini | gemini.google.com | DOM after scroll | not recently checked | unknown | none recorded | implemented, not recently exercised | DOM-first. Selectors rot |
 | Grok | grok.com | API first, DOM fallback | not recently checked | unknown | none recorded | implemented, not recently exercised | Open conversation only |
-| SuperGrok | x.com/i/grok, twitter.com/i/grok | DOM after scroll | not recently checked | unknown | none recorded | implemented, not recently exercised | Hashed classes. Most brittle |
+| SuperGrok | x.com/i/grok, twitter.com/i/grok | DOM after scroll | not recently checked | unknown | none recorded | implemented, not recently exercised | Hashed classes. Most brittle. 1.1.4 injects on x.com/* so SPA nav from the timeline shows the control; button still only on Grok routes |
 
 **Supported install:** [Tampermonkey](https://www.tampermonkey.net/) plus [haulout.user.js](https://haulout.dev/haulout.user.js). Violentmonkey and Greasemonkey are plausible and not recently checked. Bookmarklet and console paste are fallbacks with known host blocks.
 

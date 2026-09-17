@@ -86,6 +86,10 @@ Bad: “Rescue your AI memories with one click.”
 
 ## Recent changes
 
+### Session 4 — 2026-09-17
+
+Grok-on-X button missing until refresh: Tampermonkey only matched `/i/grok*`, so a client-side jump from the X timeline never injected. 1.1.4 matches `x.com/*` / `twitter.com/*` and still shows the control only on Grok routes.
+
 ### Session 3 — 2026-09-09
 
 Gemini DOM haul was doubling every turn (outer + nested selectors) and keeping Chrome “You said” / truncated preview lines. Fixed in userscript 1.1.3: outermost-only extract, strip said-headings, drop preview stems, dedupe adjacent same-role turns.

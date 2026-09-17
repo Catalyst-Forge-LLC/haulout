@@ -210,6 +210,12 @@
       "phase": "4-feature-iteration",
       "issue": "Gemini DOM haul duplicated every turn: selectors matched both user-query and nested user-query-content (and model-response / message-content). Chrome headings 'You said' / truncated previews also survived into Markdown.",
       "fix": "Keep outermost nodes only, read the inner content node, strip said-headings, drop truncated preview blocks, dedupe adjacent same-role turns. v1.1.3."
+    },
+    {
+      "date": "2026-09-17",
+      "phase": "4-feature-iteration",
+      "issue": "Haul out missing on x.com/i/grok?conversation= until a hard refresh. @match was /i/grok* so Tampermonkey never injected after X SPA navigation from the timeline.",
+      "fix": "Match x.com/* and twitter.com/*; keep shouldShow() gated to Grok routes. v1.1.4."
     }
   ],
   "sessions": [
@@ -227,6 +233,11 @@
       "date": "2026-09-09",
       "phase": "4-feature-iteration",
       "summary": "Gemini DOM duplicates: outermost-only extract + chrome/preview strip. Userscript 1.1.3."
+    },
+    {
+      "date": "2026-09-17",
+      "phase": "4-feature-iteration",
+      "summary": "Grok-on-X SPA inject: match x.com/* so Haul out appears without refresh. Userscript 1.1.4."
     }
   ]
 }

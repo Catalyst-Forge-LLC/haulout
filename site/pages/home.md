@@ -1,12 +1,12 @@
 ---
 title: Haul out the thread.
-description: Save the open ChatGPT, Claude, Gemini, Grok, or SuperGrok conversation as Markdown or JSON. Local only.
+description: Save the open ChatGPT, Claude, Gemini, or Grok conversation as Markdown or JSON. Local only.
 order: 0
 ---
 
 Save the AI conversation you have open as Markdown or JSON, with speaker labels and available metadata. HaulOut runs in your browser and downloads the result. Nothing is uploaded.
 
-[Install userscript](/haulout.user.js) · [View a sample haul](/example.md) · [Compatibility](/spec#compatibility)
+[Install userscript](/haulout.user.js) · [View a sample haul](/example.md) · [Compatibility](#compatibility)
 
 ## Install
 
@@ -25,7 +25,7 @@ The [sample Markdown](/example.md) is a sanitized ChatGPT API fixture, not an ac
 
 - **Speakers:** `You` and `ChatGPT` (or the host label)
 - **Title and project** when the page has them
-- **Per-turn clocks** when the site stores them. Missing clocks are omitted, not invented
+- **Per-turn timestamps** when the site stores them. Missing timestamps are left out, not invented
 - **`exported_at`** so two hauls of the same URL can be compared
 - **`source`:** `api` (conversation endpoint) or `dom` (rendered turns after scroll)
 
@@ -33,29 +33,39 @@ JSON is the same fields plus a `turns` array. [Sample JSON](/example.json). Imag
 
 ## How you know it finished
 
-The button shows `{n} turns · API|DOM · MD|JSON`. `n` is what HaulOut collected. It is not a certificate that the provider stored exactly that many turns. Empty extract fails with an error. A long thread is scrolled first so lazy turns can appear. That walk has a step cap. Public copy does not promise every turn of every conversation.
+The HaulOut panel shows `{n} turns · API|DOM · MD|JSON`. `n` is what HaulOut collected. It is not proof that the provider stored exactly that many turns. An empty extract fails with an error. Chat sites keep only part of a long thread on the page, so HaulOut scrolls the thread first to load older turns. That scroll has a step cap, so a very long thread can come out short.
 
 ## Compatibility
 
-Live page checks were **not recently checked** on 2026-09-10. The table lives in [`docs/COMPATIBILITY.md`](https://github.com/Catalyst-Forge-LLC/haulout/blob/main/docs/COMPATIBILITY.md). No platform is marked passed without a recorded check.
+**Supported sites.** HaulOut 1.1.4 has an adapter for ChatGPT (chatgpt.com, chat.openai.com), Claude (claude.ai), Gemini (gemini.google.com), Grok (grok.com), and Grok on X (`x.com/i/grok`). ChatGPT, Claude, and Grok read the site's conversation API first. Gemini and Grok on X read the page after scrolling, so they break first when a site changes its layout.
 
-ChatGPT, Claude, and grok.com are API-first in code. Gemini and SuperGrok (`x.com/i/grok`) are DOM-first. SuperGrok uses hashed classes and will break first.
+**Last checked working.** Each date is the most recent successful haul on record, taken from the file's `exported_at` timestamp (UTC). There are no automated tests against the live sites.
+
+| Site | Last checked working | Version |
+| --- | --- | --- |
+| ChatGPT | 2026-09-21 | 1.1.4 |
+| Grok (grok.com) | 2026-09-21 | 1.1.4 |
+| Claude | 2026-09-09 | 1.1.3 |
+| Gemini | 2026-09-09 | 1.1.3 |
+| Grok on X | Not recently verified | |
+
+Details and notes per site: [`docs/COMPATIBILITY.md`](https://github.com/Catalyst-Forge-LLC/haulout/blob/main/docs/COMPATIBILITY.md).
 
 ## Advanced fallbacks
 
 These are not as reliable as Tampermonkey.
 
-- **Violentmonkey / Greasemonkey:** plausible, not recently checked.
+- **Violentmonkey / Greasemonkey:** may work, not verified.
 - **Bookmarklet:** drag from [`fallback/`](https://github.com/Catalyst-Forge-LLC/haulout/tree/main/fallback). Claude often blocks `javascript:`.
 - **Console:** paste [`haulout.js`](https://github.com/Catalyst-Forge-LLC/haulout/blob/main/fallback/haulout.js).
 
 ## Privacy
 
-No HaulOut backend. Same-origin requests only. `@grant` is `GM_info`. You can read the script.
+No HaulOut backend. The script talks only to the chat site you have open. Its one userscript permission is `GM_info`, which reads its own version. You can read the script.
 
 ## Limits
 
-Not a full-account archive. Official bulk exports still exist and are better for everything you ever said. Selectors rot. Binaries are not bundled.
+Not a full-account archive. Official bulk exports still exist and are better for everything you ever said. A site layout change can break hauls from that site until HaulOut is updated. Images and uploads are not bundled.
 
 ## Family
 

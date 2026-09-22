@@ -3,7 +3,7 @@
 	"version": "1.1.4",
 	"private": true,
 	"type": "module",
-	"description": "Pull the open AI chat off the site as Markdown or JSON. Speakers, clocks, title, export timestamp. Local only.",
+	"description": "Pull the open AI chat off the site as Markdown or JSON. Speakers, per-turn timestamps, title, export timestamp. Local only.",
 	"license": "MIT",
 	"author": "Catalyst Forge LLC",
 	"keywords": [

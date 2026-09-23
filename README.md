@@ -79,3 +79,5 @@ Product spec: [`docs/SPEC.md`](./docs/SPEC.md). Compatibility record: [`docs/COM
 ## License
 
 MIT. Unofficial. Not affiliated with the chat sites.
+
+[See the rest of the Catalyst Forge shelf.](https://catalystforge.com/tools/)

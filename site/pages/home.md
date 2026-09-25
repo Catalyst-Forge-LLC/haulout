@@ -4,7 +4,7 @@ description: Save the open ChatGPT, Claude, Gemini, or Grok conversation as Mark
 order: 0
 ---
 
-Save the AI conversation you have open as Markdown or JSON, with speaker labels and available metadata. HaulOut runs in your browser and downloads the result. Nothing is uploaded.
+Save the AI conversation you have open as Markdown or JSON, with speaker labels and available metadata. HaulOut reads the open chat site's data and saves a download. It does not upload the transcript to a separate HaulOut service.
 
 [Install userscript](/haulout.user.js) · [View a sample haul](/example.md) · [Compatibility](#compatibility)
 

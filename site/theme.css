@@ -28,13 +28,13 @@
 	--font-serif: 'Source Serif 4', Georgia, 'Iowan Old Style', 'Times New Roman', serif;
 	--font-sans: 'DM Sans', system-ui, -apple-system, 'Segoe UI', sans-serif;
 	--font-mono: 'IBM Plex Mono', ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
-	--bg: #0b0b0c;
-	--surface: #18181b;
+	--bg: #2a2b30;
+	--surface: #34353b;
 	--ink: #e4e4e7;
 	--ink-soft: #a1a1aa;
 	--ink-faint: #71717a;
-	--rule: #27272a;
-	--rule-strong: #3f3f46;
+	--rule: #45464e;
+	--rule-strong: #5a5b64;
 	--accent: #c4a574;
 	--accent-strong: #8a6a3b;
 	--accent-wash: color-mix(in srgb, var(--accent) 11%, transparent);
@@ -51,13 +51,13 @@
 
 @media (prefers-color-scheme: dark) {
 	:root:root {
-		--bg: #0b0b0c;
-		--surface: #18181b;
+		--bg: #2a2b30;
+		--surface: #34353b;
 		--ink: #e4e4e7;
 		--ink-soft: #a1a1aa;
 		--ink-faint: #71717a;
-		--rule: #27272a;
-		--rule-strong: #3f3f46;
+		--rule: #45464e;
+		--rule-strong: #5a5b64;
 		--accent: #c4a574;
 		--accent-strong: #8a6a3b;
 	}
@@ -74,7 +74,7 @@ html body {
 		radial-gradient(1100px 560px at 8% -18%, color-mix(in srgb, var(--accent) 18%, transparent), transparent 58%),
 		radial-gradient(900px 480px at 100% -10%, color-mix(in srgb, var(--accent-strong) 16%, transparent), transparent 52%),
 		radial-gradient(700px 420px at 70% 110%, color-mix(in srgb, var(--accent) 8%, transparent), transparent 55%),
-		linear-gradient(180deg, #141416 0%, var(--bg) 38%, #0b0b0c 100%);
+		linear-gradient(180deg, #3a3b42 0%, var(--bg) 42%, #1c1d22 100%);
 	background-attachment: fixed;
 }
 
@@ -85,7 +85,7 @@ html body {
 
 header.site-header {
 	border-bottom: 1px solid color-mix(in srgb, var(--rule) 80%, transparent);
-	background: color-mix(in srgb, var(--surface) 88%, transparent);
+	background: #0c0c0e;
 	backdrop-filter: blur(12px);
 	margin-bottom: 0;
 }

@@ -1,5 +1,5 @@
 ---
-title: Haul out the thread.
+title: Save the open conversation as a file.
 description: Save the open ChatGPT, Claude, Gemini, or Grok conversation as Markdown or JSON. Local only.
 order: 0
 ---

@@ -31,8 +31,8 @@
 	--bg: #2a2b30;
 	--surface: #34353b;
 	--ink: #e4e4e7;
-	--ink-soft: #a1a1aa;
-	--ink-faint: #71717a;
+	--ink-soft: #d4d4d8;
+	--ink-faint: #b0b0b8;
 	--rule: #45464e;
 	--rule-strong: #5a5b64;
 	--accent: #c4a574;
@@ -54,8 +54,8 @@
 		--bg: #2a2b30;
 		--surface: #34353b;
 		--ink: #e4e4e7;
-		--ink-soft: #a1a1aa;
-		--ink-faint: #71717a;
+		--ink-soft: #d4d4d8;
+		--ink-faint: #b0b0b8;
 		--rule: #45464e;
 		--rule-strong: #5a5b64;
 		--accent: #c4a574;
@@ -269,7 +269,7 @@ main.wrap > header.post-header:first-child {
 	font-weight: 600;
 	letter-spacing: 0.14em;
 	text-transform: uppercase;
-	color: var(--accent-strong);
+	color: var(--accent);
 	max-width: none;
 	margin: 0 0 1rem;
 }
@@ -282,7 +282,7 @@ main.wrap > header.post-header:first-child {
 	line-height: 1.05;
 	color: var(--ink);
 	margin: 0;
-	max-width: 18ch;
+	max-width: none;
 }
 
 .home-page .prose {

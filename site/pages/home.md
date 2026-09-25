@@ -8,6 +8,11 @@ Save the AI conversation you have open as Markdown or JSON, with speaker labels 
 
 [Install userscript](/haulout.user.js) · [View a sample haul](/example.md) · [Compatibility](#compatibility)
 
+<div class="cta-row">
+  <a class="cta cta-primary" href="/haulout.user.js">Install userscript</a>
+  <a class="cta cta-secondary" href="https://github.com/Catalyst-Forge-LLC/haulout">View on GitHub</a>
+</div>
+
 ## Install
 
 1. Install [Tampermonkey](https://www.tampermonkey.net/).

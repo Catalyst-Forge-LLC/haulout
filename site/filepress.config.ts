@@ -7,7 +7,7 @@ export default defineFilepressConfig({
 	description:
 		"Pull the open ChatGPT, Claude, Gemini, Grok, or SuperGrok conversation off the site as Markdown or JSON. Local only.",
 	tagline: "Haul out the thread.",
-	lede: "Pull the open conversation off the chat site as Markdown or JSON. Nothing is uploaded.",
+	lede: 'Markdown · JSON · no upload',
 	url: "https://haulout.dev",
 	author: "Catalyst Forge LLC",
 	logo: "/logo.png",

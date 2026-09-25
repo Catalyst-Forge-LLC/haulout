@@ -1,5 +1,5 @@
 ---
-title: Save the open conversation as a file.
+title: Save the AI chat you have open as a file you keep.
 description: Save the open ChatGPT, Claude, Gemini, or Grok conversation as Markdown or JSON. Local only.
 order: 0
 ---

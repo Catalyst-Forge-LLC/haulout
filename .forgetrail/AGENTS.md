@@ -1,6 +1,6 @@
 # Agent conventions
 
-- Commit with `git commit -F` or plain `-m`. No unrequested attribution trailers.
+- Commit with `git commit -F` or plain `-m`.
 - Do not run `npm publish` / `pnpm publish`. The user publishes.
 - Do not push unless the user asks.
 - Read `.forgetrail/workflow_tracking.json` and `docs/PHASE_1_BRIEF.md` at session start.

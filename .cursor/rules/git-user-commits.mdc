@@ -9,4 +9,3 @@ alwaysApply: true
 - Do not push unless the user explicitly asks.
 - Never publish to npm. Do not run `npm publish`, `pnpm publish`,
   or `yarn npm publish`. The user publishes.
-- No unrequested attribution trailers in commit messages.

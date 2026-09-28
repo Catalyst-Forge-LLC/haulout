@@ -1,0 +1,23 @@
+---
+format_version: 0.1.0
+id: decision-ba6f168e6900
+kind: decision
+title: Prune Phase 2 CRUD/PocketBase and Phase 7 auth/payment exit criteria.
+record_status: active
+created_at: 2026-09-03T00:00:00Z
+updated_at: 2026-09-03T00:00:00Z
+recorded_by:
+  id: migration-import
+  type: import
+visibility: internal
+relations: []
+claims: []
+data:
+  status: accepted
+  choice: Prune Phase 2 CRUD/PocketBase and Phase 7 auth/payment exit criteria.
+  rationale: Imported from workflow tracking. Verification was not recorded.
+  alternatives: []
+  authority: import
+---
+
+

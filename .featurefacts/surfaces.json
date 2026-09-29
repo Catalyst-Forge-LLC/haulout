@@ -1,0 +1,91 @@
+{
+  "schemaVersion": "0.2.0",
+  "scan_id": "scan-add",
+  "surfaces": [
+    {
+      "id": "doc-docs-compatibility",
+      "kind": "document",
+      "ref": "docs/COMPATIBILITY.md",
+      "title": "docs/COMPATIBILITY.md",
+      "locator": {
+        "path": "docs/COMPATIBILITY.md",
+        "content_sha256": "12717770b01c32b202520faf0de1fa4b801d1c64dde905218907cb7fc2452936"
+      },
+      "provenance": {
+        "adapter_id": "markdown-document",
+        "adapter_version": "0.2.0",
+        "origin": "deterministic",
+        "method": "document-file"
+      },
+      "state": "current"
+    },
+    {
+      "id": "doc-docs-greasy-fork",
+      "kind": "document",
+      "ref": "docs/greasy-fork.md",
+      "title": "docs/greasy-fork.md",
+      "locator": {
+        "path": "docs/greasy-fork.md",
+        "content_sha256": "8b44591f91ed444a3d03a7e3a8b055728bbb7da91a2e62164392b2aa4732e7fe"
+      },
+      "provenance": {
+        "adapter_id": "markdown-document",
+        "adapter_version": "0.2.0",
+        "origin": "deterministic",
+        "method": "document-file"
+      },
+      "state": "current"
+    },
+    {
+      "id": "doc-docs-phase-1-brief",
+      "kind": "document",
+      "ref": "docs/PHASE_1_BRIEF.md",
+      "title": "docs/PHASE_1_BRIEF.md",
+      "locator": {
+        "path": "docs/PHASE_1_BRIEF.md",
+        "content_sha256": "9314deb41a116d8b492b9a2a8cbb8ecf9ed3ae7a1ccb83ab962ee46856abe69a"
+      },
+      "provenance": {
+        "adapter_id": "markdown-document",
+        "adapter_version": "0.2.0",
+        "origin": "deterministic",
+        "method": "document-file"
+      },
+      "state": "current"
+    },
+    {
+      "id": "doc-docs-spec",
+      "kind": "document",
+      "ref": "docs/SPEC.md",
+      "title": "docs/SPEC.md",
+      "locator": {
+        "path": "docs/SPEC.md",
+        "content_sha256": "6c9674500f0f9adce42cce8ce8846bc59def3ae3a1dd106309371f71d0cfe206"
+      },
+      "provenance": {
+        "adapter_id": "markdown-document",
+        "adapter_version": "0.2.0",
+        "origin": "deterministic",
+        "method": "document-file"
+      },
+      "state": "current"
+    },
+    {
+      "id": "doc-readme",
+      "kind": "document",
+      "ref": "README.md",
+      "title": "README.md",
+      "locator": {
+        "path": "README.md",
+        "content_sha256": "ead57b481d0cd968449b1b9785a6e0423831217e8104ed68216cbf6a7b77ae96"
+      },
+      "provenance": {
+        "adapter_id": "markdown-document",
+        "adapter_version": "0.2.0",
+        "origin": "deterministic",
+        "method": "document-file"
+      },
+      "state": "current"
+    }
+  ]
+}

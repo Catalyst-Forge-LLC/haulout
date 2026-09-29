@@ -1,0 +1,17 @@
+{
+  "schemaVersion": "0.2.0",
+  "scan_id": "scan-add",
+  "kind": "docs",
+  "assessments": [
+    {
+      "feature_id": "haulout",
+      "assessment": {
+        "state": "unassessed",
+        "result": "unknown",
+        "adapter_ids": [],
+        "links": [],
+        "reason": "Documentation was not assessed."
+      }
+    }
+  ]
+}

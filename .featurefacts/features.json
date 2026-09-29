@@ -2,7 +2,7 @@
   "schemaVersion": "0.2.0",
   "scan_id": "scan-add",
   "product": {
-    "name": "haulout",
+    "name": "HaulOut",
     "type": "unknown",
     "status": "unknown",
     "license": "MIT"

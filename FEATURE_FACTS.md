@@ -2,7 +2,7 @@
 feature_facts_version: 0.2.0
 mode: map-backed
 audience: internal
-name: haulout
+name: HaulOut
 type: unknown
 status: unknown
 license: MIT
@@ -17,7 +17,7 @@ generated:
   date: 2026-09-29
   generator: featurefacts
   generator_version: 0.2.0
-  projection_fingerprint: 3f67596e17bdb3f460241eff1ae68e1d146483382c1135ccf39f5cbd30b44ce3
+  projection_fingerprint: 35432020c12941efc99629b789699fb9fd746aaec9e20bddf29731deb92e2ba4
 counts:
   scope: eligible-confirmed-active
   registered: 0
@@ -44,7 +44,7 @@ assessments:
     undisclosed: 0
 ---
 
-# Feature Facts: haulout
+# Feature Facts: HaulOut
 
 What can this product do?
 

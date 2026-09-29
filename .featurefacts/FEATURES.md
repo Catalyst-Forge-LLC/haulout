@@ -1,4 +1,4 @@
-# Feature register: haulout
+# Feature register: HaulOut
 
 Scan `scan-add`. Candidates are not confirmed capabilities.
 

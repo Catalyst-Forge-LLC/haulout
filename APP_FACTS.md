@@ -1,6 +1,6 @@
 ---
 app_facts_version: 0.1.0
-name: haulout
+name: HaulOut
 type: userscript
 status: active
 license: MIT
@@ -23,7 +23,7 @@ credits:
   built_by: "Catalyst Forge — https://www.catalystforge.com/"
 ---
 
-# haulout
+# HaulOut
 
 `userscript` · **active** · MIT
 
@@ -52,4 +52,4 @@ _None listed_
 ---
 *Generated with [AppFacts](https://appfacts.dev) · Built by [Catalyst Forge](https://www.catalystforge.com/) · [Visual label][appfacts-label]*
 
-[appfacts-label]: https://appfacts.dev/v#af1.eNpNj8FqwzAQBf_lnRWbXnUNFFrSXppbKWUjL7IaWRLalcGE_HtR00Cub4cZ9oIV9skg0cKwmKnF3BQGupU-NOEqrobSN1HSJrAgp2FlGMTgOEkH316ON8KdYS-IlHwj3y-vtNLHXVFb0vCXes8TDz_SUznHkDwsSioLrgYTF4H9_DI4tRCnLizkzuT5e6FEnusDPOeFyy01qxax4_j_xjDx2ptcsgTNdXtAfNC5nQaXl3FPSnET3T3n6nl3OOzvAlx_AQjZYeA
+[appfacts-label]: https://appfacts.dev/v#af1.eNpNjU1LAzEURf_LXU9ncJttQVSqLnQnIq-ZRyY2X-S9DAyl_11iKXR77-GcM1aYhwGJIsPgiVp4b4oBupU-NOEqtvrSN1HSJjAgq35lDAjecpIOvj5_Xgl7gjkjUHKNXH9eaKWPm6K2pP4_9ZZnHn-lp3IOPjkYlFQiLgNmLgLz9T3g2HyYu7CQPZHjn0iJHNc7eMmRyzW1qBYx07RQC7npOPPam1yyeM11u0Oc16UdR5vjtCelsInuHnN1vDsc9jcBLn_FCmGg

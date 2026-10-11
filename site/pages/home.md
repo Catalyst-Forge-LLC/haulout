@@ -6,17 +6,17 @@ order: 0
 
 Save the AI conversation you have open as Markdown or JSON, with speaker labels and available metadata. HaulOut reads the open chat site's data and saves a download. It does not upload the transcript to a separate HaulOut service.
 
-[Install userscript](/haulout.user.js) · [View a sample haul](/example.md) · [Compatibility](#compatibility)
+<a href="/haulout.user.js" download="haulout.user.js" data-sveltekit-reload>Install userscript</a> · <a href="/example.md" data-sveltekit-reload>View a sample haul</a> · [Compatibility](#compatibility)
 
 <div class="cta-row">
-  <a class="cta cta-primary" href="/haulout.user.js">Install userscript</a>
+  <a class="cta cta-primary" href="/haulout.user.js" download="haulout.user.js" data-sveltekit-reload>Install userscript</a>
   <a class="cta cta-secondary" href="https://github.com/Catalyst-Forge-LLC/haulout">View on GitHub</a>
 </div>
 
 ## Install
 
 1. Install [Tampermonkey](https://www.tampermonkey.net/).
-2. Open [haulout.user.js](/haulout.user.js) and accept the install.
+2. Open <a href="/haulout.user.js" download="haulout.user.js" data-sveltekit-reload>haulout.user.js</a> and accept the install.
 3. Reload the chat tab.
 4. Open the conversation you want.
 5. Click **Haul out** at the bottom right, or press **Alt+Shift+E**.
@@ -26,7 +26,7 @@ That is the path this project supports. Claude often blocks `javascript:` bookma
 
 ## What a haul contains
 
-The [sample Markdown](/example.md) is a sanitized ChatGPT API fixture, not an account archive.
+The <a href="/example.md" data-sveltekit-reload>sample Markdown</a> is a sanitized ChatGPT API fixture, not an account archive.
 
 - **Speakers:** `You` and `ChatGPT` (or the host label)
 - **Title and project** when the page has them
@@ -34,7 +34,7 @@ The [sample Markdown](/example.md) is a sanitized ChatGPT API fixture, not an ac
 - **`exported_at`** so two hauls of the same URL can be compared
 - **`source`:** `api` (conversation endpoint) or `dom` (rendered turns after scroll)
 
-JSON is the same fields plus a `turns` array. [Sample JSON](/example.json). Images and uploads are referenced, not zipped.
+JSON is the same fields plus a `turns` array. <a href="/example.json" data-sveltekit-reload>Sample JSON</a>. Images and uploads are referenced, not zipped.
 
 ## How you know it finished
 
@@ -83,3 +83,5 @@ Not a full-account archive. Official bulk exports still exist and are better for
 HaulOut is an unofficial local tool. It is not affiliated with OpenAI, Anthropic, Google, xAI, or X. Private web APIs and page structure change. Hauls can be incomplete. You are responsible for how you keep and share your own transcripts.
 
 MIT · [GitHub](https://github.com/Catalyst-Forge-LLC/haulout) · [Spec](/spec)
+
+<script src="/open-static.js"></script>

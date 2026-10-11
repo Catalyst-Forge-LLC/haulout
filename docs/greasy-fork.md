@@ -1,6 +1,6 @@
 # Greasy Fork — listing pack
 
-The public install door people click. GitHub stays the edit place. haulout.dev hosts the live `.user.js` (and is the sync URL until the GitHub repo is public).
+The public install door people click. GitHub stays the edit place. haulout.dev hosts the live `.user.js` and is the sync URL.
 
 New script: https://greasyfork.org/en/script_versions/new  
 (Sign in first. GitHub OAuth is fine.)
@@ -20,7 +20,7 @@ Sync from URL (not a one-off paste). Then “Update and sync now.”
 https://haulout.dev/haulout.user.js
 ```
 
-Do not use the GitHub raw URL while the repo is private — it 404s.
+The repo is public. Keep this sync URL on haulout.dev so it matches the userscript `@updateURL`. GitHub raw also serves the file.
 
 **Language**  
 JavaScript
@@ -66,7 +66,7 @@ Then:
 
 1. Paste the listing URL here (shape: `https://greasyfork.org/en/scripts/<id>-haulout`).
 2. We switch the haulout.dev hero CTA to that Install button.
-3. Optional later: make the GitHub repo public and move sync to  
+3. Optional later: move sync to  
    `https://raw.githubusercontent.com/Catalyst-Forge-LLC/haulout/main/haulout.user.js`  
    plus the account webhook on https://greasyfork.org/en/users/webhook-info
 

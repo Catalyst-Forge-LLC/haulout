@@ -8,7 +8,10 @@ import { fileURLToPath } from "node:url";
 
 const root = join(dirname(fileURLToPath(import.meta.url)), "..");
 const dest = join(root, "site", "static");
+const sampleDir = join(root, "site", "sample");
 mkdirSync(dest, { recursive: true });
+mkdirSync(sampleDir, { recursive: true });
 copyFileSync(join(root, "haulout.user.js"), join(dest, "haulout.user.js"));
 copyFileSync(join(root, "examples", "kitchen-reno.md"), join(dest, "example.md"));
 copyFileSync(join(root, "examples", "kitchen-reno.json"), join(dest, "example.json"));
+copyFileSync(join(root, "examples", "kitchen-reno.md"), join(sampleDir, "example.md"));

@@ -1,6 +1,6 @@
 ---
 title: Save the AI chat you have open as a file you keep.
-description: Save the open ChatGPT, Claude, Gemini, or Grok conversation as Markdown or JSON. Local only.
+description: Save the open ChatGPT, Claude, Gemini, Grok, or Grok on X conversation as Markdown or JSON. Local only.
 order: 0
 ---
 
@@ -54,6 +54,8 @@ The HaulOut panel shows `{n} turns · API|DOM · MD|JSON`. `n` is what HaulOut c
 | Gemini | 2026-09-09 | 1.1.3 |
 | Grok on X | Not recently verified | |
 
+Claude and Gemini were last hauled on 1.1.3. Version 1.1.4 only changed how Grok on X is detected, and that path does not have a completed haul on record yet.
+
 Details and notes per site: [`docs/COMPATIBILITY.md`](https://github.com/Catalyst-Forge-LLC/haulout/blob/main/docs/COMPATIBILITY.md).
 
 ## Advanced fallbacks
@@ -83,5 +85,3 @@ Not a full-account archive. Official bulk exports still exist and are better for
 HaulOut is an unofficial local tool. It is not affiliated with OpenAI, Anthropic, Google, xAI, or X. Private web APIs and page structure change. Hauls can be incomplete. You are responsible for how you keep and share your own transcripts.
 
 MIT · [GitHub](https://github.com/Catalyst-Forge-LLC/haulout) · [Spec](/spec)
-
-<script src="/open-static.js"></script>

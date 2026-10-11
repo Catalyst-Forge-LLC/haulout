@@ -25,5 +25,3 @@ Filename: `haulout-YYYY-MM-DD-<platform>-<slug>.md`
 ## Compatibility
 
 Supported sites and the last date each was checked working are on the [home page](/#compatibility). Per-site notes: [`docs/COMPATIBILITY.md`](https://github.com/Catalyst-Forge-LLC/haulout/blob/main/docs/COMPATIBILITY.md). A site gets a date only from a recorded successful haul.
-
-<script src="/open-static.js"></script>

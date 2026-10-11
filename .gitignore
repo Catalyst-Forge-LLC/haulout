@@ -5,6 +5,7 @@ site/.svelte-kit/
 site/.filepress/
 site/static/haulout.user.js
 site/static/example.md
+site/sample/
 .DS_Store
 Thumbs.db
 .env

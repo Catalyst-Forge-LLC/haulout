@@ -15,7 +15,7 @@ export default defineFilepressConfig({
 	nav: [
 		{ label: "Home", href: "/" },
 		{ label: "Install", href: "/#install" },
-		{ label: "Sample", href: "/example.md" },
+		{ label: "Sample", href: "/sample/example.md" },
 		{ label: "Spec", href: "/spec" },
 		{ label: "About", href: "/about" },
 		{ label: "GitHub", href: github, icon: "github" },
@@ -27,4 +27,5 @@ export default defineFilepressConfig({
 		{ label: "GitHub", href: github, icon: "github" },
 		{ label: "Detangler", href: "https://detangler.dev" },
 	],
+	paths: [{ url: "/sample", dir: "sample" }],
 });

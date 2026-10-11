@@ -20,5 +20,3 @@ A haul-out brings a boat out of the water onto land. HaulOut brings the conversa
 Not a bulk archive. Not a cloud sync. Not a rewriter. Not affiliated with the chat sites.
 
 Maintained by [Catalyst Forge LLC](https://www.catalystforge.com). MIT.
-
-<script src="/open-static.js"></script>

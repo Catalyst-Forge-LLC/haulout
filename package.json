@@ -1,6 +1,6 @@
 {
 	"name": "haulout",
-	"version": "1.1.4",
+	"version": "1.1.5",
 	"type": "module",
 	"description": "Pull the open AI chat off the site as Markdown or JSON. Speakers, per-turn timestamps, title, export timestamp. Local only.",
 	"license": "MIT",

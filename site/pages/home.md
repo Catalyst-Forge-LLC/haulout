@@ -4,7 +4,25 @@ description: "Save the AI conversation you have open as Markdown or JSON, with s
 order: 0
 ---
 
-<section class="value-hero" aria-label="HaulOut overview"><div class="value-intro"><p class="value-kind">Browser userscript for exporting AI conversations</p><h1>Keep the chat as a file of your own.</h1><p class="value-lede">Save the AI conversation you have open as Markdown or JSON, with speaker labels and available metadata. HaulOut downloads a copy you can read, search, or keep with the project.</p><div class="cta-row"><a class="cta cta-primary" href="#install">Set up the userscript</a><a class="cta cta-secondary" href="/example.md">Read a sample export</a></div><p class="value-limit">Requires Tampermonkey. Long threads can be incomplete. The export does not upload your transcript to a HaulOut service.</p></div><figure class="value-proof"><figcaption>Illustrative example</figcaption><p><strong>Starting point</strong><br>An open conversation contains a decision you want to keep.</p><div class="value-result"><p><strong>What you get</strong><br>A Markdown file with speakers, available timestamps, and an export date.</p></div><p>Save that file beside the project so the decision survives beyond the chat tab.</p><p class="value-note">Illustrative export. Attachments are referenced, not bundled.</p></figure></section>
+<section class="value-hero" aria-label="HaulOut overview"><div class="value-intro"><div class="value-headline"><p class="value-kind">Browser userscript for exporting AI conversations</p><h1>Keep the chat as a file of your own.</h1></div><div class="value-pitch"><p class="value-lede">Save the AI conversation you have open as Markdown or JSON, with speaker labels and available metadata. HaulOut downloads a copy you can read, search, or keep with the project.</p><div class="cta-row"><a class="cta cta-primary" href="#install">Set up the userscript</a><a class="cta cta-secondary" href="#export-example">See the exported words</a></div><p class="value-limit">Requires Tampermonkey. Long threads can be incomplete. The export does not upload your transcript to a HaulOut service.</p></div></div>
+<figure class="value-proof worked-example" id="export-example" tabindex="-1">
+<figcaption>The conversation leaves the tab as readable Markdown</figcaption>
+<p class="example-context">Excerpt from the existing sanitized ChatGPT API fixture, “Kitchen reno punch list.” It is a sample artifact, not an export from your account.</p>
+<section class="example-step" aria-labelledby="example-step-1">
+<h2 id="example-step-1"><span>1 · Conversation in the browser</span> Keep the question with its context</h2>
+<blockquote><p>Can we keep the existing range hood?</p></blockquote><p>This is turn 1 of the sample conversation, in the <strong>House</strong> project.</p><p>Click <strong>Haul out</strong>, choose Markdown, and save the downloaded file with your project.</p>
+</section>
+<section class="example-step example-report" aria-labelledby="example-step-2">
+<h2 id="example-step-2"><span>2 · Markdown export excerpt</span> Speaker, time, and source travel with the words</h2>
+<pre><code>title: Kitchen reno punch list&#10;project: House&#10;exported_at: 2026-09-02T17:43:00.000Z&#10;source: api&#10;turns: 4&#10;&#10;### You · turn 1 — 2026-08-30T14:11:02.000Z&#10;&#10;Can we keep the existing range hood?</code></pre>
+</section>
+<section class="example-step" aria-labelledby="example-step-3">
+<h2 id="example-step-3"><span>3 · Your saved file</span> Find the exchange after the tab is closed</h2>
+<p>Open the Markdown in an editor or search the project for <strong>range hood</strong>. The complete export retains the replies and speaker labels, so the question is not separated from the discussion.</p><p class="example-payoff">You can keep the conversation in the same folder and history as the work it informed.</p>
+</section>
+<p class="value-note">Selected metadata and one turn are shown here. Collection counts do not prove completeness. Attachments are referenced, not bundled.</p>
+<p class="example-links"><a href="/example.md" data-sveltekit-reload>Open the complete Markdown export</a> · <a href="/example.json" data-sveltekit-reload>Inspect the JSON version</a></p>
+</figure></section>
 
 ## Install
 

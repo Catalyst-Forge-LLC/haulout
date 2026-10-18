@@ -1,17 +1,10 @@
 ---
-title: Save the AI chat you have open as a file you keep.
-description: Save the open ChatGPT, Claude, Gemini, Grok, or Grok on X conversation as Markdown or JSON. Local only.
+title: "Keep the chat as a file of your own."
+description: "Save the AI conversation you have open as Markdown or JSON, with speaker labels and available metadata. HaulOut downloads a copy you can read, search, or keep with the project."
 order: 0
 ---
 
-Save the AI conversation you have open as Markdown or JSON, with speaker labels and available metadata. HaulOut reads the open chat site's data and saves a download. It does not upload the transcript to a separate HaulOut service.
-
-<a href="/haulout.user.js" download="haulout.user.js" data-sveltekit-reload>Install userscript</a> · <a href="/example.md" data-sveltekit-reload>View a sample haul</a> · [Compatibility](#compatibility)
-
-<div class="cta-row">
-  <a class="cta cta-primary" href="/haulout.user.js" download="haulout.user.js" data-sveltekit-reload>Install userscript</a>
-  <a class="cta cta-secondary" href="https://github.com/Catalyst-Forge-LLC/haulout">View on GitHub</a>
-</div>
+<section class="value-hero" aria-label="HaulOut overview"><div class="value-intro"><p class="value-kind">Browser userscript for exporting AI conversations</p><h1>Keep the chat as a file of your own.</h1><p class="value-lede">Save the AI conversation you have open as Markdown or JSON, with speaker labels and available metadata. HaulOut downloads a copy you can read, search, or keep with the project.</p><div class="cta-row"><a class="cta cta-primary" href="#install">Set up the userscript</a><a class="cta cta-secondary" href="/example.md">Read a sample export</a></div><p class="value-limit">Requires Tampermonkey. Long threads can be incomplete. The export does not upload your transcript to a HaulOut service.</p></div><figure class="value-proof"><figcaption>Illustrative example</figcaption><p><strong>Starting point</strong><br>An open conversation contains a decision you want to keep.</p><div class="value-result"><p><strong>What you get</strong><br>A Markdown file with speakers, available timestamps, and an export date.</p></div><p>Save that file beside the project so the decision survives beyond the chat tab.</p><p class="value-note">Illustrative export. Attachments are referenced, not bundled.</p></figure></section>
 
 ## Install
 

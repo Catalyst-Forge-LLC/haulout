@@ -4,10 +4,9 @@ const github = "https://github.com/Catalyst-Forge-LLC/haulout";
 
 export default defineFilepressConfig({
 	title: "HaulOut",
-	description:
-		"Pull the open ChatGPT, Claude, Gemini, Grok, or SuperGrok conversation off the site as Markdown or JSON. Local only.",
+	description: "Save the AI conversation you have open as Markdown or JSON, with speaker labels and available metadata. HaulOut downloads a copy you can read, search, or keep with the project.",
 	tagline: "Haul out the thread.",
-	lede: 'Markdown · JSON · no upload',
+	lede: "Browser userscript for exporting AI conversations",
 	url: "https://haulout.dev",
 	author: "Catalyst Forge LLC",
 	logo: "/logo.png",

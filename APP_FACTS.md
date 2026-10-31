@@ -4,7 +4,7 @@ name: HaulOut
 type: userscript
 status: active
 license: MIT
-version: 1.1.10
+version: 1.1.11
 homepage: https://haulout.dev
 repository: https://github.com/Catalyst-Forge-LLC/haulout
 stack:
